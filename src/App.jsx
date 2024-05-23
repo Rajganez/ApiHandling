@@ -1,14 +1,14 @@
-import './App.css'
-import Residents from './components/Residents'
+import "./App.css";
+import Residents from "./components/Residents";
 
 function App() {
-  
-
   return (
     <>
-      <Residents/>
+      <div className="container">
+        <Residents />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

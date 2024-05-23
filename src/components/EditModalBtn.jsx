@@ -1,44 +1,41 @@
 import PropTypes from "prop-types";
 import { editRes } from "../api-axios.js";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { ResDataContext } from "../ContextFile.jsx";
 
-export const EditModalBtn = ({ id, resData, edit }) => {
-  // let intialForm = {
-  //   name: "",
-  //   username: "",
-  //   email: "",
-  //   phone: "",
-  //   company: "",
-  // };
-  // const [edit, setEdit] = useState(intialForm);
-  const [resId, setResId] = useState();
+const EditModalBtn = ({ id, updatedRes }) => {
+  //Used Context to change the UI
+  const [occupied, setOccupied] = useContext(ResDataContext);
 
-    console.log(edit);
- 
+  //State to Edit the details of the residents
+  const [resId, setRes] = useState(updatedRes);
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   // setEdit({ ...edit, [name]: value });
-  // };
+  useEffect(() => {
+    setRes(updatedRes);
+  }, [updatedRes]);
+
+  //Function to change the details of the residents
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setRes({ ...resId, [name]: value });
+  };
+
+  //Function to update the details of the residents in the API
+  const updateRes = async () => {
+    // eslint-disable-next-line no-unused-vars
+    const update = await editRes(id, resId);
+    let tempRes = occupied.findIndex((flats) => flats.id === resId.id);
+    occupied[tempRes] = resId;
+    setOccupied([...occupied]);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(upDateRes());
-    // console.log(edit);
-    // setEdit(formData);
+    updateRes();
   };
+
   return (
     <div className="container">
-      <button
-        type="button"
-        className="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-        
-        >
-        Edit Residents
-      </button>
-
       <div
         className="modal fade"
         id="exampleModal"
@@ -63,47 +60,47 @@ export const EditModalBtn = ({ id, resData, edit }) => {
               <div className="mb-3">
                 <input
                   type="text"
-                  value={edit?.name}
+                  value={resId.name}
                   name="name"
                   className="form-control"
                   placeholder="Name"
-                  // onChange={handleChange}
+                  onChange={handleChange}
                 />
                 <br />
                 <input
                   type="text"
                   name="username"
-                  value={edit?.username}
+                  value={resId.username}
                   className="form-control"
                   placeholder="Username"
-                  // onChange={handleChange}
+                  onChange={handleChange}
                 />
                 <br />
                 <input
                   type="text"
                   name="company"
-                  value={edit?.company}
+                  value={resId.company}
                   className="form-control"
                   placeholder="Company"
-                  // onChange={handleChange}
+                  onChange={handleChange}
                 />
                 <br />
                 <input
                   type="Email"
                   name="email"
-                  value={edit?.email}
+                  value={resId.email}
                   className="form-control"
                   placeholder="Email"
-                  // onChange={handleChange}
+                  onChange={handleChange}
                 />
                 <br />
                 <input
                   type="text"
-                  name="number"
-                  value={edit?.number}
+                  name="phone"
+                  value={resId.phone}
                   className="form-control"
                   placeholder="Phone"
-                  // onChange={handleChange}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -132,7 +129,6 @@ export const EditModalBtn = ({ id, resData, edit }) => {
 };
 EditModalBtn.propTypes = {
   id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  resData: PropTypes.array,
-  edit: PropTypes.object,
+  updatedRes: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 export default EditModalBtn;
