@@ -4,9 +4,7 @@ import AddModalBtn from "./AddModalBtn.jsx";
 const Header = () => {
   return (
     <>
-      <div className="row ">
-        <div className="position-fixed z-2">
-          <nav className="navbar bg-dark  ">
+          <nav className="navbar bg-dark ">
             <div className="container-fluid">
               <div className="navbar-brand">
                 <img
@@ -22,9 +20,8 @@ const Header = () => {
               </div>
             </div>
           </nav>
-          <AddModalBtn />
-        </div>
-      </div>
+      
+      <AddModalBtn />
     </>
   );
 };

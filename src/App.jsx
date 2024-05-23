@@ -4,9 +4,7 @@ import Residents from "./components/Residents";
 function App() {
   return (
     <>
-      <div className="container">
         <Residents />
-      </div>
     </>
   );
 }

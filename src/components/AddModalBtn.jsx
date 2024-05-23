@@ -40,113 +40,115 @@ const AddModalBtn = () => {
 
   return (
     <>
-      <div className="bg-primary-subtle">
-        <div className="row p-1">
-          <div className="col">
-            <b>Occupied : {count}</b>
-            <div>
-              <b>Not Occupied : {100 - count}</b>
+      <div className="row">
+        <div className="bg-primary-subtle position-fixed z-1">
+          <div className="row p-1">
+            <div className="col">
+              <b>Occupied : {count}</b>
               <div>
-                <b>Total : 100</b>
+                <b>Not Occupied : {100 - count}</b>
+                <div>
+                  <b>Total : 100</b>
+                </div>
               </div>
             </div>
-          </div>
 
-          <button
-            type="button"
-            className="btn btn-primary col-3 mx-auto me-3 p-3"
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
-          >
-            Add Residents
-          </button>
+            <button
+              type="button"
+              className="btn btn-primary col-3 mx-auto me-3 p-3"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Add Resident
+            </button>
 
-          <div
-            className="modal fade"
-            id="staticBackdrop"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            tabIndex="-1"
-            aria-labelledby="staticBackdropLabel"
-            aria-hidden="true"
-          >
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                    Residents Details
-                  </h1>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div className="modal-body">
-                  <div className="mb-3">
-                    <input
-                      type="text"
-                      value={addData.name}
-                      name="name"
-                      className="form-control"
-                      placeholder="Name"
-                      onChange={handleChange}
-                    />
-                    <br />
-                    <input
-                      type="text"
-                      name="username"
-                      value={addData.username}
-                      className="form-control"
-                      placeholder="Username"
-                      onChange={handleChange}
-                    />
-                    <br />
-                    <input
-                      type="text"
-                      name="company"
-                      value={addData.company}
-                      className="form-control"
-                      placeholder="Company"
-                      onChange={handleChange}
-                    />
-                    <br />
-                    <input
-                      type="Email"
-                      name="email"
-                      value={addData.email}
-                      className="form-control"
-                      placeholder="Email"
-                      onChange={handleChange}
-                    />
-                    <br />
-                    <input
-                      type="text"
-                      name="phone"
-                      value={addData.number}
-                      className="form-control"
-                      placeholder="Phone"
-                      onChange={handleChange}
-                    />
+            <div
+              className="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabIndex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="staticBackdropLabel">
+                      Residents Details
+                    </h1>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
                   </div>
-                </div>
-                <div className="modal-footer">
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Close
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    data-bs-dismiss="modal"
-                    onClick={handleSubmit}
-                  >
-                    Add
-                  </button>
+                  <div className="modal-body">
+                    <div className="mb-3">
+                      <input
+                        type="text"
+                        value={addData.name}
+                        name="name"
+                        className="form-control"
+                        placeholder="Name"
+                        onChange={handleChange}
+                      />
+                      <br />
+                      <input
+                        type="text"
+                        name="username"
+                        value={addData.username}
+                        className="form-control"
+                        placeholder="Username"
+                        onChange={handleChange}
+                      />
+                      <br />
+                      <input
+                        type="text"
+                        name="company"
+                        value={addData.company}
+                        className="form-control"
+                        placeholder="Company"
+                        onChange={handleChange}
+                      />
+                      <br />
+                      <input
+                        type="Email"
+                        name="email"
+                        value={addData.email}
+                        className="form-control"
+                        placeholder="Email"
+                        onChange={handleChange}
+                      />
+                      <br />
+                      <input
+                        type="text"
+                        name="phone"
+                        value={addData.number}
+                        className="form-control"
+                        placeholder="Phone"
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      data-bs-dismiss="modal"
+                      onClick={handleSubmit}
+                    >
+                      Add
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
