@@ -41,7 +41,7 @@ const AddModalBtn = () => {
   return (
     <>
       <div className="row">
-        <div className="bg-primary-subtle position-fixed z-1">
+        <div className="bg-primary-subtle">
           <div className="row p-1">
             <div className="col">
               <b>Occupied : {count}</b>

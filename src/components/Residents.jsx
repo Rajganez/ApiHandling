@@ -27,10 +27,7 @@ function Residents() {
     <>
       <div>
         <Header />
-        <div
-          className="d-sm-flex row gap-4 ms-3"
-          style={{ paddingTop: "150px" }}
-        >
+        <div className="d-sm-flex row gap-4 ms-3">
           {occupied.map((flat) => (
             <div
               key={flat.id}
