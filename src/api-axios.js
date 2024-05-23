@@ -20,10 +20,10 @@ const editRes = async (id, updatedRes) => {
 const deleteRes = async (id) => {
   const response = await resInstance.delete(`${id}`);
   return response.data;
-}
+};
 const addRes = async (addDataRes) => {
   const response = await resInstance.post("", addDataRes);
   return response.data;
-}
+};
 
 export { getAllRes, editRes, deleteRes, addRes };
