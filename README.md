@@ -1,43 +1,27 @@
-## Application Name
+# Apartment Residents Management
 
-Residents details in the Apartment, CRUD can be done, Axios API calls, Used mockapi 
+## Description
 
+This project is a web application for managing residents' details in an apartment complex. It supports CRUD (Create, Read, Update, Delete) operations and uses Axios for API calls. The frontend is designed using Bootstrap for a responsive and clean user interface.
 
-## Technologies Used
-# React + Vite + Bootstrap
+## Features
 
+- **Residents Management**: Add, view, update, and delete resident information.
+- **API Integration**: Axios is used for making HTTP requests to a mock API.
+- **Responsive Design**: The frontend is built with Bootstrap, ensuring the application looks great on all devices.
 
-## Description:
+## Technology Stack
 
-Using Axios API call, done CRUD implementation with the data generated from mockapi.,
+- **Frontend**: HTML, CSS, Bootstrap
+- **API Calls**: Axios
+- **Mock API**: [MockAPI](https://mockapi.io) is used for simulating backend operations.
 
-This task represents the residents details in a apartment where the details of the tenants can be added, updated and removed
+## Installation
 
-Residents.jsx file is the main source which shows all the information about the tenants
-
-Bootstrap Modal styling is Used to Edit and Add Residants information
-
-api-axios.js file does all methods for the call
-
-This is a Responsive design. To view the Project
-
-Visit :  https://hiranapartresidents.netlify.app/
-
-# Setup
-
-1. Clone the Repository
-
-npm i axios  (add axios dependency)
-
-2. Start the Project 
-
-npm run dev
-
-
-
-
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Rajganez/ApiHandling.git
+   cd ApiHandling
+   npm install
+   npm start
+   ```
